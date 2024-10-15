@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="style.css">
+    <title>Clue Helper</title>
+</head>
+
+<body>
+    <div id="gameSetup">
+        <h1>WELCOME TO LUKE'S CLUE HELPER APP</h1>
+        <h3>ENTER PLAYER NAMES IN CLOCKWISE ORDER</h3>
+        <input id="playerName0" type="text" placeholder="your name">
+        <input id="playerName1" type="text" placeholder="player2 name">
+        <input id="playerName2" type="text" placeholder="player3 name">
+        <input id="playerName3" type="text" placeholder="player4 name">
+        <input id="playerName4" type="text" placeholder="player5 name">
+        <input id="playerName5" type="text" placeholder="player6 name">
+        <div>
+            <button onclick="CreateGame()">Create Game</button>
+            <button onclick="ClearPlayerNameInputs()">Clear</button>
+        </div>
+    </div>
+    <div id="game" class="hidden">
+        <table id="game-table" class="table table-bordered">
+            <thead>
+                <tr class="pointer">
+                    <td class="" onclick="submitNewSuggestion()">Suggestion</td>
+                    <td class="suspect" onclick="newSuggestionContent('suspect','mustard')">Mustard</td>
+                    <td class="suspect" onclick="newSuggestionContent('suspect','plum')">Plum</td>
+                    <td class="suspect" onclick="newSuggestionContent('suspect','green')">Green</td>
+                    <td class="suspect" onclick="newSuggestionContent('suspect','peacock')">Peacock</td>
+                    <td class="suspect" onclick="newSuggestionContent('suspect','scarlet')">Scarlet</td>
+                    <td class="suspect" onclick="newSuggestionContent('suspect','white')">White</td>
+                    <td class="weapon" onclick="newSuggestionContent('weapon','knife')">Knife</td>
+                    <td class="weapon" onclick="newSuggestionContent('weapon','candlestick')">Candlestick</td>
+                    <td class="weapon" onclick="newSuggestionContent('weapon','revolver')">Revolver</td>
+                    <td class="weapon" onclick="newSuggestionContent('weapon','rope')">Rope</td>
+                    <td class="weapon" onclick="newSuggestionContent('weapon','leadpipe')">Lead Pipe</td>
+                    <td class="weapon" onclick="newSuggestionContent('weapon','wrench')">Wrench</td>
+                    <td class="room" onclick="newSuggestionContent('room','hall')">Hall</td>
+                    <td class="room" onclick="newSuggestionContent('room','lounge')">Lounge</td>
+                    <td class="room" onclick="newSuggestionContent('room','diningroom')">Dining Room</td>
+                    <td class="room" onclick="newSuggestionContent('room','kitchen')">Kitchen</td>
+                    <td class="room" onclick="newSuggestionContent('room','ballroom')">Ballroom</td>
+                    <td class="room" onclick="newSuggestionContent('room','conservatory')">Conservatory</td>
+                    <td class="room" onclick="newSuggestionContent('room','billiardroom')">Billiard Room</td>
+                    <td class="room" onclick="newSuggestionContent('room','library')">Library</td>
+                    <td class="room" onclick="newSuggestionContent('room','study')">Study</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="row_global" class="pointer">
+                    <td>*</td>
+                    <td onclick="GlobalStartingCardEntry('mustard')"></td>
+                    <td onclick="GlobalStartingCardEntry('plum')"></td>
+                    <td onclick="GlobalStartingCardEntry('green')"></td>
+                    <td onclick="GlobalStartingCardEntry('peacock')"></td>
+                    <td onclick="GlobalStartingCardEntry('scarlet')"></td>
+                    <td onclick="GlobalStartingCardEntry('white')"></td>
+                    <td onclick="GlobalStartingCardEntry('knife')"></td>
+                    <td onclick="GlobalStartingCardEntry('candlestick')"></td>
+                    <td onclick="GlobalStartingCardEntry('revolver')"></td>
+                    <td onclick="GlobalStartingCardEntry('rope')"></td>
+                    <td onclick="GlobalStartingCardEntry('leadpipe')"></td>
+                    <td onclick="GlobalStartingCardEntry('wrench')"></td>
+                    <td onclick="GlobalStartingCardEntry('hall')"></td>
+                    <td onclick="GlobalStartingCardEntry('lounge')"></td>
+                    <td onclick="GlobalStartingCardEntry('diningroom')"></td>
+                    <td onclick="GlobalStartingCardEntry('kitchen')"></td>
+                    <td onclick="GlobalStartingCardEntry('ballroom')"></td>
+                    <td onclick="GlobalStartingCardEntry('conservatory')"></td>
+                    <td onclick="GlobalStartingCardEntry('billiardroom')"></td>
+                    <td onclick="GlobalStartingCardEntry('library')"></td>
+                    <td onclick="GlobalStartingCardEntry('study')"></td>
+                </tr>
+                <tr id="row_0" class="pointer">
+                    <td class="pointer" onclick="newSuggestionContent('suggester',0)">0</td>
+                    <td onclick="UserStartingCardEntry('mustard')"></td>
+                    <td onclick="UserStartingCardEntry('plum')"></td>
+                    <td onclick="UserStartingCardEntry('green')"></td>
+                    <td onclick="UserStartingCardEntry('peacock')"></td>
+                    <td onclick="UserStartingCardEntry('scarlet')"></td>
+                    <td onclick="UserStartingCardEntry('white')"></td>
+                    <td onclick="UserStartingCardEntry('knife')"></td>
+                    <td onclick="UserStartingCardEntry('candlestick')"></td>
+                    <td onclick="UserStartingCardEntry('revolver')"></td>
+                    <td onclick="UserStartingCardEntry('rope')"></td>
+                    <td onclick="UserStartingCardEntry('leadpipe')"></td>
+                    <td onclick="UserStartingCardEntry('wrench')"></td>
+                    <td onclick="UserStartingCardEntry('hall')"></td>
+                    <td onclick="UserStartingCardEntry('lounge')"></td>
+                    <td onclick="UserStartingCardEntry('diningroom')"></td>
+                    <td onclick="UserStartingCardEntry('kitchen')"></td>
+                    <td onclick="UserStartingCardEntry('ballroom')"></td>
+                    <td onclick="UserStartingCardEntry('conservatory')"></td>
+                    <td onclick="UserStartingCardEntry('billiardroom')"></td>
+                    <td onclick="UserStartingCardEntry('library')"></td>
+                    <td onclick="UserStartingCardEntry('study')"></td>
+                </tr>
+                <tr id="row_1">
+                    <td class="pointer" onclick="newSuggestionContent('suggester',1)">1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr id="row_2">
+                    <td class="pointer" onclick="newSuggestionContent('suggester',2)">2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr id="row_3">
+                    <td class="pointer" onclick="newSuggestionContent('suggester',3)">3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr id="row_4">
+                    <td class="pointer" onclick="newSuggestionContent('suggester',4)">4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr id="row_5">
+                    <td class="pointer" onclick="newSuggestionContent('suggester',5)">5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="suggestionArea" class="hidden card">
+            <div id="suggestionText">
+                <p>suggester</p>
+                <p>is asking if</p>
+                <p>suggestee</p>
+                <p>is holding</p>
+                <p>suspect</p>
+                <p>weapon</p>
+                <p>room</p>
+            </div>
+            <div id="suggestionButtons" class="hidden">
+                <div>
+                    <button id="noneButton" onclick="SuggestionAction('none')">none</button>
+                </div>
+                <div>
+                    <button id="suspectButton" onclick="SuggestionAction('suspect')">suspect</button>
+                    <button id="weaponButton" onclick="SuggestionAction('weapon')">weapon</button>
+                    <button id="roomButton" onclick="SuggestionAction('room')">room</button>
+                </div>
+                <div>
+                    <button id="unknownButton" onclick="SuggestionAction('unknown')">unknown</button>
+                </div>
+            </div>
+        </div>
+        <h2 id="helperArea">
+            ENTER GLOBAL STARTING CARDS
+        </h2>
+    </div>
+
+    <script src="clue.js"></script>
+</body>
+
+</html>

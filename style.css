@@ -1,0 +1,96 @@
+* {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input {
+  width: 100px;
+  margin: 10px;
+}
+
+button {
+  width: 100px;
+  margin: 10px;
+}
+
+.knownHave {
+  font-style: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+table,
+th,
+td {
+  border: 1px solid #4e4e4e;
+  border-collapse: collapse;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.suspect {
+  background-color: #ffa7a7;
+}
+
+.weapon {
+  background-color: #beffc7;
+}
+
+.room {
+  background-color: #b2b0ff;
+}
+
+.selected {
+  background-color: black;
+  font-style: italic;
+  color: white;
+}
+
+.suggestee {
+  background-color: #d4d4d4;
+}
+
+.card {
+  box-shadow: 5px 5px 5px #b8b8b8;
+  width: 30%;
+  margin: auto;
+  background-color: #eeeded;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 8px;
+  line-height: 50%;
+}
+
+table {
+  width: 100%;
+  height: 500px;
+  table-layout: fixed;
+  margin-bottom: 8px;
+}
+
+thead td {
+  overflow: hidden;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  -webkit-text-orientation: upright;
+          text-orientation: upright;
+  text-transform: uppercase;
+}
+
+td {
+  font-size: 16px;
+  vertical-align: bottom;
+  padding: 10px;
+  text-align: left;
+}
+
+@media screen and (max-width: 1000px) {
+  td {
+    font-size: 10px;
+    padding: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
